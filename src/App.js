@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+//import logo from './logo.svg';
+import "./App.css";
+import Skills from "./skills.js";
+//import Shape from './shape.js'
+//import CssBaseline from '@material-ui/core/CssBaseline';
 
-function App() {
+const App = () => {
+  //const [myNums, setNums] = useState(savedNumbers);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <main>
+        <section>
+          <div>
+            <h1>Define your shape</h1>
+            <p>
+              <a href="https://www.ravi-mehta.com/product-manager-roles/">
+                {" "}
+                Ravi Mehta
+              </a>{" "}
+              defines the product roles as a lorem ipsum dolor sit amet
+            </p>
+          </div>
+          <h3>Rate your skills</h3>
+          <div>
+            <Skills />
+          </div>
+        </section>
+      </main>
     </div>
   );
-}
+};
 
 export default App;
