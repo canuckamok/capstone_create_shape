@@ -23,7 +23,7 @@ const App = () => {
             </p>
           </div>
           <h3>Rate your skills</h3>
-          <div>
+          <div className="SkillsAndShape">
             <Skills />
           </div>
         </section>

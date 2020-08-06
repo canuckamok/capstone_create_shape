@@ -2,58 +2,8 @@ import React, { useState, useEffect } from "react";
 import Chart from "react-apexcharts";
 
 const Shape = ({ myNumbers }) => {
-  /*console.log(props);
-  const savedNumbers = JSON.parse(localStorage.getItem("myNumbers")) || [
-  {
-    text: "Feature specification",
-    numValue: 0
-  },
-  {
-    text: "Product delivery",
-    numValue: 0
-  },
-  {
-    text: "Quality assurance",
-    numValue: 0
-  },
-  {
-    text: "Fluency with data",
-    numValue: 0
-  },
-  {
-    text: "Voice of the customer",
-    numValue: 0
-  },
-  {
-    text: "User experience design",
-    numValue: 0
-  },
-  {
-    text: "Business outcome ownership",
-    numValue: 0
-  },
-  {
-    text: "Product vision & roadmapping",
-    numValue: 0
-  },
-  {
-    text: "Strategic impact",
-    numValue: 0
-  },
-  {
-    text: "Stakeholder management",
-    numValue: 0
-  },
-  {
-    text: "Team leadership",
-    numValue: 0
-  },
-  {
-    text: "Managing up",
-    numValue: 0
-  }
-];*/
   useEffect(() => {
+    //const s = box.offsetWidth;
     setState({
       options: {
         chart: {
@@ -61,11 +11,23 @@ const Shape = ({ myNumbers }) => {
         },
         xaxis: {
           categories: myNumbers.map(({ text }) => text),
+
+        },
+        fill: {
+          colors: "#3f51b5",
+          opacity: .7,
+        },
+        stroke: {
+          show: true,
+          colors: "#3f51b5",
+          width: 2,
+        },
+        markers: {
+          colors: "#3f51b5"
         },
         plotOptions: {
         radar: {
-          offsetX: 10,
-          offsetY: 50,
+          size: 180,
         },
       },
       },
@@ -85,12 +47,12 @@ const Shape = ({ myNumbers }) => {
       xaxis: {
         categories: myNumbers.map(({ text }) => text),
       },
-      plotOptions: {
-        radar: {
-          offsetX: 10,
-          offsetY: 50,
-        },
-      },
+      // plotOptions: {
+      //   radar: {
+      //     //offsetX: 10,
+      //     //offsetY: 50,
+      //   },
+      // },
     },
     series: [
       {
@@ -100,20 +62,20 @@ const Shape = ({ myNumbers }) => {
     ],
   });
 
+  //const w = window.innerWidth/3;
+  //const h = window.innerHeight/4;
+
   return (
-    <div className="Shape">
-      <div className="Row">
-        <div className="chart">
+    <div className="Radar">
           <Chart
             options={state.options}
             series={state.series}
             type="radar"
-            width="800"
-            height="500"
+            width= "100%"
+
+            //height= {w}
             //startAngle="0"
           />
-        </div>
-      </div>
     </div>
   );
 };
