@@ -3,7 +3,8 @@ import Chart from "react-apexcharts";
 
 const Shape = ({ myNumbers }) => {
   useEffect(() => {
-    //const s = box.offsetWidth;
+    const colors = ["#3f51b5"];
+    const labelColor = ["#c5c6c7"];
     setState({
       options: {
         chart: {
@@ -11,19 +12,26 @@ const Shape = ({ myNumbers }) => {
         },
         xaxis: {
           categories: myNumbers.map(({ text }) => text),
+          labels: {
+            style: {
+              colors: labelColor,
+              fontSize: '12px',
+            },
+          },
 
         },
         fill: {
-          colors: "#3f51b5",
+          colors: colors,
           opacity: .7,
         },
         stroke: {
           show: true,
-          colors: "#3f51b5",
+          colors: colors,
           width: 2,
+          curve: "smooth",
         },
         markers: {
-          colors: "#3f51b5"
+          colors: colors,
         },
         plotOptions: {
         radar: {
@@ -46,6 +54,11 @@ const Shape = ({ myNumbers }) => {
       },
       xaxis: {
         categories: myNumbers.map(({ text }) => text),
+        labels: {
+            style: {
+              //colors: labelColor,
+            },
+          },
       },
       // plotOptions: {
       //   radar: {

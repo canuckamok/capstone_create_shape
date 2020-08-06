@@ -1,12 +1,27 @@
 import React, { useEffect, useState } from "react";
 import Slider from "@material-ui/core/Slider";
 import Shape from "./shape";
+import { createMuiTheme } from '@material-ui/core/styles';
+import { ThemeProvider } from '@material-ui/styles';
 
 /* **************TO DO LIST******************/
 /* 1.[X] Set value from slider
 /* 2.[/] Save values in localstorage
 /* 3.[] Styling fixes
 */
+
+const muiTheme = createMuiTheme({
+  overrides:{
+    MuiSlider: {
+      markLabel:{
+      color: "#c5c6c7"
+      },
+      markLabelActive: {
+        color: "markLabel"
+      }
+    }
+}
+});
 
 const marks = [
   {
@@ -46,23 +61,23 @@ function Skills() {
       numValue: 0,
     },
     {
-      text: ["Voice ", "of ", "the ", "customer"],
+      text: ["Voice of the ", "customer"],
       numValue: 0,
     },
     {
-      text: "User experience design",
+      text: ["User ", "experience ", "design"],
       numValue: 0,
     },
     {
-      text: "Business outcome ownership",
+      text: ["Business ", "outcome ", "ownership"],
       numValue: 0,
     },
     {
-      text: "Product vision & roadmapping",
+      text: ["Product ", "vision" ," & roadmapping"],
       numValue: 0,
     },
     {
-      text: "Strategic impact",
+      text: ["Strategic ", "impact"],
       numValue: 0,
     },
     {
@@ -70,7 +85,7 @@ function Skills() {
       numValue: 0, 
     },
     {
-      text: "Team leadership",
+      text: ["Team ", "leadership"],
       numValue: 0,
     },
     {
@@ -117,6 +132,7 @@ function Skills() {
               <p>{text.text}</p>
             </div>
             <div className="Slider">
+              <ThemeProvider theme={muiTheme}>
               <Slider
                 value={text.numValue}
                 getAriaValueText={(value) => valueText(index, value)}
@@ -128,6 +144,7 @@ function Skills() {
                 valueLabelDisplay="auto"
                 onChangeCommitted={(e, value) => handleChange(index, e, value)}
               />
+              </ThemeProvider>
             </div>
           </div>
         ))}
