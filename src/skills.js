@@ -18,6 +18,9 @@ const muiTheme = createMuiTheme({
       },
       markLabelActive: {
         color: "markLabel"
+      },
+      root: {
+        width:'20rem'
       }
     }
 }
